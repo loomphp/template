@@ -1,0 +1,55 @@
+{
+    "name": "loom/template",
+    "type": "library",
+    "description": "A lightweight PHP templating engine built on top of Plates",
+    "keywords": [
+        "php",
+        "loom",
+        "templates",
+        "plates"
+    ],
+    "homepage": "https://github.com/loomphp/template",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Augustus Kamau",
+            "email": "kaugustus15@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "league/plates": "3.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5.16",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Loom\\Template\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LoomTest\\Template\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@check-style",
+            "@test"
+        ],
+        "check-style": "phpcs src tests",
+        "fix-style": "phpcbf src tests",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+    }
+}
